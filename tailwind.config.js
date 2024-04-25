@@ -27,6 +27,9 @@ module.exports = {
           100: '#372554',
         },
       },
+      animation: {
+        'pfcSpin': 'spin 5s linear infinite',
+      },
     },
   },
   plugins: [],
