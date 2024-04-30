@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/output.css">
 </head>
 
-<body class="bg-pfcWhite-200">
+<body class="bg-pfcWhite-300">
 
     <main class="font-inter">
 
@@ -67,30 +67,65 @@
 
         <article class="flex justify-center">
 
-            <section class="p-10 m-4 rounded-2xl bg-white shadow-md w-80">
-                <h2 class="text-pfcUltra-100 text-2xl font-archivo mb-5 text-center">Lançamentos</h2>
-                <h6>ID</h6>
-                <h6>Tipo</h6>
-                <h6>Categoria</h6>
-                <h6>Descrição</h6>
-                <h6>Valor</h6>
-                <h6>Data de Vencimento (due_date)</h6>
-                <h6>Data de Pagamento (payment_date)</h6>
-                <h6>Conta</h6>
-                <h6>Status</h6>
-                <h6>Comentários</h6>
+            <section class="p-10 m-4 rounded-2xl bg-white shadow-md w-10/12 max-h-[600px] overflow-auto scrollbar-hide">
+                <h2 class="text-pfcUltra-100 text-4xl font-archivo mb-5 text-center">Lançamentos</h2>
+                <div class="flex flex-wrap justify-center">
+
+
+                    <div class="my-8 mx-4 p-4 rounded-2xl bg-pfcWhite-300 text-pfcUltra-100 shadow-md w-2/5">
+                        <h6 class="mb-4 font-archivo">ID: <span class="font-inter">210894787</span></h6>
+                        <h6 class="mb-4 font-archivo">Tipo: <span class="font-inter">210894787</span></h6>
+                        <h6 class="mb-4 font-archivo">Categoria: <span class="font-inter">210894787</span></h6>
+                        <h6 class="mb-4 font-archivo">Descrição: <span class="font-inter">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Voluptatibus aliquam minima repellendus eligendi
+                                aspernatur magni harum quos maiores voluptatem, sed veniam ipsum, perferendis dolorem.
+                                Odit officiis commodi neque corrupti cupiditate?</span></h6>
+                        <h6 class="mb-4 font-archivo">Valor: <span class="font-inter">210894787</span></h6>
+                        <h6 class="mb-4 font-archivo">Data de Vencimento: <span class="font-inter">210894787</span></h6>
+                        <!--(due_date)-->
+                        <h6 class="mb-4 font-archivo">Data de Pagamento: <span class="font-inter">210894787</span></h6>
+                        <!--(payment_date)-->
+                        <h6 class="mb-4 font-archivo">Conta: <span class="font-inter">210894787</span></h6>
+                        <h6 class="mb-4 font-archivo">Status: <span class="font-inter">210894787</span></h6>
+                        <h6 class="font-archivo">Comentários: <span class="font-inter">210894787</span></h6>
+                    </div>
+
+
+                </div>
             </section>
 
-            <section class="p-10 m-4 rounded-2xl bg-white shadow-md w-80">
-                <h2 class="text-pfcUltra-100 text-2xl font-archivo mb-5 text-center">CRUD</h2>
-                <h6>Criar</h6>
-                <h6>Visualizar</h6>
-                <h6>Editar</h6>
-                <h6>Excluir</h6>
-            </section>
+
+
+
 
         </article>
 
+        <article class="flex justify-center">
+
+
+            <section class="p-10 m-4 rounded-2xl bg-white shadow-md w-10/12">
+                <h2 class="text-4xl font-archivo mb-5 text-center text-pfcUltra-100 ">CRUD</h2>
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-2 w-full place-items-center">
+                        <button
+                            class="my-4 bg-pfcViolet-100 hover:bg-pfcUltra-100 text-white font-archivo py-2 px-4 rounded-lg w-3/4 transition-all duration-500 ease-in-out">
+                            Criar
+                        </button>
+                        <button
+                            class="my-4 bg-pfcViolet-100 hover:bg-pfcUltra-100 text-white font-archivo py-2 px-4 rounded-lg w-3/4 transition-all duration-500 ease-in-out">
+                            Visualizar
+                        </button>
+                        <button
+                            class="my-4 bg-pfcViolet-100 hover:bg-pfcUltra-100 text-white font-archivo py-2 px-4 rounded-lg w-3/4 transition-all duration-500 ease-in-out">
+                            Editar
+                        </button>
+                        <button
+                            class="my-4 bg-pfcViolet-100 hover:bg-pfcUltra-100 text-white font-archivo py-2 px-4 rounded-lg w-3/4 transition-all duration-500 ease-in-out">
+                            Excluir
+                        </button>
+                    </div>
+                </div>
+            </section>
 
     </main>
 </body>
