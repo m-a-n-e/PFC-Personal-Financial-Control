@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.static {
+  position: static;
+}
+
 .absolute {
   position: absolute;
 }
@@ -849,27 +853,9 @@ video {
   background-color: rgb(55 37 84 / var(--tw-bg-opacity));
 }
 
-.hover\:font-bold:hover {
-  font-weight: 700;
-}
-
-.hover\:font-semibold:hover {
-  font-weight: 600;
-}
-
 .hover\:text-pfcUltra-100:hover {
   --tw-text-opacity: 1;
   color: rgb(55 37 84 / var(--tw-text-opacity));
-}
-
-.hover\:text-pfcViolet-100:hover {
-  --tw-text-opacity: 1;
-  color: rgb(82 82 140 / var(--tw-text-opacity));
-}
-
-.hover\:text-pfcFolly-100:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 16 83 / var(--tw-text-opacity));
 }
 
 .focus\:border-gray-200:focus {
