@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFC - Fazer lançamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-pfcWhite-200">
+
+    <main class="font-inter">
+
+        <div class="p-10 m-4 rounded-2xl bg-white shadow-md w-80">
+            <h2 class="text-pfcUltra-100 text-2xl font-archivo mb-5 text-center">Faça um lançamento</h2>
+            <form action="/lancar" method="POST">
+                <div class="mb-4">
+                    <label>
+                        Tipo:
+                        <div><input class="accent-pfcViolet-100" type="radio" name="type" value="Despesa"> Despesa</div>
+                        <div><input class="accent-pfcViolet-100" type="radio" name="type" value="Receita"> Receita</div>
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Categoria:
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100"
+                            name="categories" type="text" placeholder="Aluguel">
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Descrição:
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100"
+                            name="description" type="text" placeholder="Aluguel apto">
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Valor:
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100"
+                            name="value" type="text" placeholder="R$ 750,00">
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Data de Vencimento:
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100"
+                            name="due_date" type="date">
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Data de Pagamento:
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100"
+                            name="payment_date" type="date">
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Conta:
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100"
+                            name="account" type="text" placeholder="Conta Corrente">
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Status:
+                        <div><input class="accent-pfcViolet-100" type="radio" name="status" value="Lancada"> Lancada
+                        </div>
+                        <div><input class="accent-pfcViolet-100" type="radio" name="status" value="Confirmada">
+                            Confirmada</div>
+                        <div><input class="accent-pfcViolet-100" type="radio" name="status" value="Paga"> Paga</div>
+                        <div><input class="accent-pfcViolet-100" type="radio" name="status" value="Cancelada"> Cancelada
+                        </div>
+                    </label>
+                </div>
+                <div class="flex items-center justify-center mb-2">
+                    <button
+                        class="bg-pfcViolet-100 hover:bg-pfcUltra-100 text-white font-archivo py-2 px-4 rounded-lg w-full transition-all duration-500 ease-in-out"
+                        type="submit">
+                        Lançar
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+</body>
+<script src="../js/script.js"></script>
+
+</html>

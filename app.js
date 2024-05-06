@@ -56,8 +56,50 @@ app.post('/login', async (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
-  res.render('admin');
+  let lancamentos;
+  try {
+    lancamentos = JSON.parse(fs.readFileSync('./dist/data/entries.json'));
+  } catch (err) {
+    lancamentos = [];
+  }
+
+  res.render('admin', { lancamentos: lancamentos });
 });
+
+app.get('/lancar', (req, res) => {
+  res.render('lancar');
+})
+
+app.get('/lancamentos', (req, res) => {
+  res.render('lancamentos');
+})
+
+app.post('/lancar', (req, res) => {
+  let lancamentos;
+  try {
+    lancamentos = JSON.parse(fs.readFileSync('./dist/data/entries.json'));
+  } catch (err) {
+    lancamentos = [];
+  }
+
+  const novoLancamento = {
+    id: uuid.v4(),
+    type: req.body.type,
+    categories: req.body.categories,
+    description: req.body.description,
+    value: req.body.value,
+    due_date: req.body.due_date,
+    payment_date: req.body.payment_date,
+    account: req.body.account,
+    status: req.body.status
+  };
+
+  lancamentos.push(novoLancamento);
+  fs.writeFileSync('./dist/data/entries.json', JSON.stringify(lancamentos));
+  res.redirect('/admin');
+});
+
+
 
 app.listen(port, () => {
   console.log(`Aplicação rodando na porta ${port}`);
