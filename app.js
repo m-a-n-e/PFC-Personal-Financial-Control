@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname, 'dist', 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static('dist'));
+app.use(express.json());
 
 app.get('/register', (req, res) => {
   res.render('register');
@@ -66,14 +67,6 @@ app.get('/admin', (req, res) => {
   res.render('admin', { lancamentos: lancamentos });
 });
 
-app.get('/lancar', (req, res) => {
-  res.render('lancar');
-})
-
-app.get('/lancamentos', (req, res) => {
-  res.render('lancamentos');
-})
-
 app.post('/lancar', (req, res) => {
   let lancamentos;
   try {
@@ -99,6 +92,40 @@ app.post('/lancar', (req, res) => {
   res.redirect('/admin');
 });
 
+
+app.get('/read', function (req, res) {
+  // Implemente a lógica para ler aqui
+});
+
+app.put('/update', function (req, res) {
+  // Implemente a lógica para atualizar aqui
+});
+
+app.delete('/delete/:id', (req, res) => {
+  const id = req.params.id;
+  let data = JSON.parse(fs.readFileSync('./dist/data/entries.json'));
+
+  const index = data.findIndex(item => item.id === id);
+  if (index !== -1) {
+    data.splice(index, 1);
+    fs.writeFileSync('./dist/data/entries.json', JSON.stringify(data));
+    res.status(200).send({ message: 'Lançamento deletado' });
+  } else {
+    res.status(404).send({ message: 'Lançamento não encontrado' });
+  }
+});
+
+//popup?
+app.get('/lancar', (req, res) => {
+  res.render('lancar.ejs', (err, html) => {
+      if (err) {
+          console.error(err);
+          res.status(500).send('An error occurred');
+      } else {
+          res.send(html);
+      }
+  });
+});
 
 
 app.listen(port, () => {
