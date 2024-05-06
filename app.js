@@ -92,13 +92,23 @@ app.post('/lancar', (req, res) => {
   res.redirect('/admin');
 });
 
+app.get('/lancar', (req, res) => {
+  res.render('lancar.ejs', (err, html) => {
+      if (err) {
+          console.error(err);
+          res.status(500).send('An error occurred');
+      } else {
+          res.send(html);
+      }
+  });
+});
 
 app.get('/read', function (req, res) {
-  // Implemente a lógica para ler aqui
+
 });
 
 app.put('/update', function (req, res) {
-  // Implemente a lógica para atualizar aqui
+
 });
 
 app.delete('/delete/:id', (req, res) => {
@@ -115,17 +125,53 @@ app.delete('/delete/:id', (req, res) => {
   }
 });
 
-//popup?
-app.get('/lancar', (req, res) => {
-  res.render('lancar.ejs', (err, html) => {
-      if (err) {
-          console.error(err);
-          res.status(500).send('An error occurred');
-      } else {
-          res.send(html);
-      }
-  });
+app.get('/categories', (req, res) => {
+  res.render('categories');
 });
+
+app.post('/categories', (req, res) => {
+  let categories;
+  try {
+    categories = JSON.parse(fs.readFileSync('./dist/data/categories.json'));
+  } catch (err) {
+    categories = [];
+  }
+
+  const novaCategoria = {
+    id: uuid.v4(),
+    type: req.body.category_type,
+    description: req.body.category_description
+  };
+
+  categories.push(novaCategoria);
+  fs.writeFileSync('./dist/data/categories.json', JSON.stringify(categories));
+  res.redirect('/admin');
+});
+
+app.get('/accounts', (req, res) => {
+  res.render('accounts');
+});
+
+app.post('/accounts', (req, res) => {
+  let accounts;
+  try {
+    accounts = JSON.parse(fs.readFileSync('./dist/data/accounts.json'));
+  } catch (err) {
+    accounts = [];
+  }
+
+  const novaConta = {
+    id: uuid.v4(),
+    account_number: req.body.account_number,
+    account_type: req.body.account_type,
+    bank: req.body.bank
+  };
+
+  accounts.push(novaConta);
+  fs.writeFileSync('./dist/data/accounts.json', JSON.stringify(accounts));
+  res.redirect('/admin');
+});
+
 
 
 app.listen(port, () => {

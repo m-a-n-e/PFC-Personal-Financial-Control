@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFC - Cadastrar Categoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-pfcWhite-200">
+
+    <main class="font-inter w-full flex justify-center align-middle">
+
+        <div class="p-10 m-4 rounded-2xl bg-white shadow-md w-1/3">
+            <h2 class="text-pfcUltra-100 text-2xl font-archivo mb-5 text-center">Cadastrar Categoria</h2>
+            <form action="/categories" method="POST">
+                <div class="mb-4">
+                    <label>
+                        Tipo:
+                        <div class="relative">
+                            <select name="category_type"
+                                class="shadow appearance-none border rounded-lg w-full py-2 px-3 bg-white text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100 pr-8">
+                                <option selected>Selecione uma opção</option>
+                                <option value="Despesa">Despesa</option>
+                                <option value="Receita">Receita</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="h-4 w-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label>
+                        Descrição:
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-2 px-3 bg-white text-gray-700 leading-tight focus:outline-none focus:border-gray-200 focus:ring-2 focus:ring-pfcViolet-100"
+                            name="category_description" type="text" placeholder="Descrição">
+                    </label>
+                </div>
+                <div class="flex items-center justify-center mb-2">
+                    <button
+                        class="bg-pfcViolet-100 hover:bg-pfcUltra-100 text-white font-archivo py-2 px-4 rounded-lg w-full transition-all duration-500 ease-in-out"
+                        type="submit">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
